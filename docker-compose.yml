@@ -17,5 +17,7 @@ services:
       - ${ZIGBEE_USB_ADAPTER}:/dev/ttyACM0
     group_add:
       - dialout
+      - tty
+      - uucp
     environment:
       - TZ=Europe/Warsaw
