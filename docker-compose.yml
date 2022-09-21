@@ -3,12 +3,6 @@ version: '3.8'
 services:
   mosquitto:
     container_name: mosquitto
-    image: eclipse-mosquitto
+    image: eclipse-mosquitto:1.6.15
     restart: unless-stopped
     network_mode: host
-    configs:
-      - source: mosquitto
-        target: /mosquitto/config/mosquitto.conf
-configs:
-  mosquitto:
-    file: ./configs/mosquitto.conf
