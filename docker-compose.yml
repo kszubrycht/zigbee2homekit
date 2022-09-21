@@ -13,4 +13,4 @@ services:
         target: /mosquitto/config/mosquitto.conf
 configs:
   mosquitto:
-    file: ./configs/mosquitto.conf
+    external: true
