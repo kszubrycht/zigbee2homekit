@@ -5,12 +5,4 @@ services:
     container_name: mosquitto
     image: eclipse-mosquitto
     restart: unless-stopped
-    ports:
-      - 1883:1883
-      - 9001:9001
-    configs:
-      - source: mosquitto
-        target: /mosquitto/config/mosquitto.conf
-configs:
-  mosquitto:
-    external: true
+    network_mode: host
