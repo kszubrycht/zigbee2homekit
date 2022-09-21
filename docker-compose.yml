@@ -6,3 +6,5 @@ services:
     image: eclipse-mosquitto
     restart: unless-stopped
     network_mode: host
+    volumes:
+      - ./configs/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
