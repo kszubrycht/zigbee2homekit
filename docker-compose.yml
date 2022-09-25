@@ -9,7 +9,7 @@ services:
   zigbee2mqtt:
     container_name: zigbee2mqtt
     image: koenkk/zigbee2mqtt
-    restart: unless-stoped
+    restart: unless-stopped
     network_mode: host
     volumes:
       - zigbee2mqtt_data:/app/data
@@ -21,7 +21,7 @@ services:
   homebridge:
     container_name: homebridge
     image: oznu/homebridge
-    restart: unless-stoped
+    restart: unless-stopped
     network_mode: host
     environment:
       - TZ=Europe/Warsaw
@@ -30,7 +30,7 @@ services:
   node-red:
     container_name: node-red
     image: nodered/node-red
-    restart: unless-stoped
+    restart: unless-stopped
     network_mode: host
     environment:
       - TZ=Europe/Warsaw
