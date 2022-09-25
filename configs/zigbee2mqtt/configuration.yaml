@@ -3,6 +3,6 @@ homeassistant: false
 permit_join: false
 mqtt:
   base_topic: zigbee2mqtt
-  server: 'mqtt://mosquitto'
+  server: 'mqtt://localhost'
 serial:
   port: /dev/ttyACM0
