@@ -29,4 +29,4 @@ services:
       - homebridge_data:/homebridge
 volumes:
   zigbee2mqtt_data:
-  homebridge:
+  homebridge_data:
