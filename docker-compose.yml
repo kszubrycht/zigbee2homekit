@@ -6,3 +6,17 @@ services:
     image: eclipse-mosquitto:1.6
     restart: unless-stopped
     network_mode: host
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    image: koenkk/zigbee2mqtt
+    restart: unless-stoped
+    network_mode: host
+    volumes:
+      - zigbee2mqtt_data:/app/data
+      - /run/udev:/run/udev:ro
+    devices:
+      - ${ZIGBEE_USB_ADAPTER}:/dev/ttyAM0
+    environment:
+      - TZ=Europe/Warsaw
+volumes:
+  zigbee2mqtt_data:
