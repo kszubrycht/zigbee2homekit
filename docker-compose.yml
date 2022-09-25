@@ -16,15 +16,11 @@ services:
       - /run/udev:/run/udev:ro
     devices:
       - ${ZIGBEE_USB_ADAPTER}:/dev/ttyACM0
-    environment:
-      - TZ=Europe/Warsaw
   homebridge:
     container_name: homebridge
     image: oznu/homebridge
     restart: unless-stopped
     network_mode: host
-    environment:
-      - TZ=Europe/Warsaw
     volumes:
       - homebridge_data:/homebridge
   node-red:
@@ -32,8 +28,6 @@ services:
     image: nodered/node-red
     restart: unless-stopped
     network_mode: host
-    environment:
-      - TZ=Europe/Warsaw
     volumes:
       - node-red_data:/data
 volumes:
