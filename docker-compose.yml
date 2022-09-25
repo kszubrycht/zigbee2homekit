@@ -18,5 +18,15 @@ services:
       - ${ZIGBEE_USB_ADAPTER}:/dev/ttyAM0
     environment:
       - TZ=Europe/Warsaw
+  homebridge:
+    container_name: homebridge
+    image: oznu/homebridge
+    restart: unless-stoped
+    network_mode: host
+    environment:
+      - TZ=Europe/Warsaw
+    volumes:
+      - homebridge_data:/homebridge
 volumes:
   zigbee2mqtt_data:
+  homebridge_data:
