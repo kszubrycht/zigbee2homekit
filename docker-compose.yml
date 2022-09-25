@@ -27,6 +27,16 @@ services:
       - TZ=Europe/Warsaw
     volumes:
       - homebridge_data:/homebridge
+  node-red:
+    container_name: node-red
+    image: nodered/node-red
+    restart: unless-stoped
+    network_mode: host
+    environment:
+      - TZ=Europe/Warsaw
+    volumes:
+      - node-red_data:/data
 volumes:
   zigbee2mqtt_data:
   homebridge_data:
+  node-red_data:
