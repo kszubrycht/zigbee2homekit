@@ -1,3 +1,4 @@
+frontend: true
 homeassistant: false
 permit_join: false
 mqtt:
