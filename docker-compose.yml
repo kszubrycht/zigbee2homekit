@@ -15,7 +15,7 @@ services:
       - zigbee2mqtt_data:/app/data
       - /run/udev:/run/udev:ro
     devices:
-      - ${ZIGBEE_USB_ADAPTER}:/dev/ttyAM0
+      - ${ZIGBEE_USB_ADAPTER}:/dev/ttyAC{M0
     environment:
       - TZ=Europe/Warsaw
   homebridge:
