@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto:1.6
+    restart: unless-stopped
+    network_mode: host
