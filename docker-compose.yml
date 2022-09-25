@@ -3,21 +3,6 @@ version: '3.8'
 services:
   mosquitto:
     container_name: mosquitto
-    image: eclipse-mosquitto
+    image: eclipse-mosquitto:1.6
     restart: unless-stopped
     network_mode: host
-  zigbee2mqtt:
-    container_name: zigbee2mqtt
-    image: koenkk/zigbee2mqtt
-    restart: unless-stopped
-    network_mode: host
-    volumes:
-      - /run/udev:/run/udev:ro
-    devices:
-      - ${ZIGBEE_USB_ADAPTER}:/dev/ttyACM0
-    group_add:
-      - dialout
-      - tty
-      - uucp
-    environment:
-      - TZ=Europe/Warsaw
