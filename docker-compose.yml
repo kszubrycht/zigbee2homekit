@@ -12,7 +12,6 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./configs/zigbee2mqtt/configuration.yaml:/app/data/configuration.yaml
       - zigbee2mqtt_data:/app/data
       - /run/udev:/run/udev:ro
     devices:
