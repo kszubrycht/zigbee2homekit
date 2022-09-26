@@ -17,6 +17,8 @@ services:
       - /run/udev:/run/udev:ro
     devices:
       - ${ZIGBEE_USB_ADAPTER}:/dev/ttyACM0
+    group_add:
+      - dialout
   homebridge:
     container_name: homebridge
     image: oznu/homebridge
