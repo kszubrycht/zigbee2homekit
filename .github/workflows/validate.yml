@@ -1,0 +1,10 @@
+name: Validate
+on: push
+jobs:
+  validator:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Validate compose file
+        run: docker-compose config
