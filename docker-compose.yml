@@ -15,9 +15,12 @@ services:
       - zigbee2mqtt_data:/app/data
       - /run/udev:/run/udev:ro
     devices:
-      - ${ZIGBEE_USB_ADAPTER}:/dev/ttyACM0
+      - ${ZIGBEE2MQTT_DEVICE:?err}:/dev/ttyACM0
     environment:
       - TZ=${TZ}
+      - ZIGBEE2MQTT_CONFIG_ADVANCED=${ZIGBEE2MQTT_CONFIG_ADVANCED}
+      - ZIGBEE2MQTT_CONFIG_FRONTEND=${ZIGBEE2MQTT_CONFIG_FRONTEND-TRUE}
+      - ZIGBEE2MQTT_CONFIG_PERMIT_JOIN=${ZIGBEE2MQTT_CONFIG_PERMIT_JOIN-FALSE}
     group_add:
       - dialout
   homebridge:
