@@ -3,12 +3,12 @@ version: '3.8'
 services:
   mosquitto:
     container_name: mosquitto
-    image: eclipse-mosquitto:1.6
+    image: eclipse-mosquitto:latest
     restart: unless-stopped
     network_mode: host
   zigbee2mqtt:
     container_name: zigbee2mqtt
-    image: koenkk/zigbee2mqtt
+    image: koenkk/zigbee2mqtt:latest
     restart: unless-stopped
     network_mode: host
     volumes:
@@ -25,7 +25,7 @@ services:
       - dialout
   homebridge:
     container_name: homebridge
-    image: oznu/homebridge
+    image: homebridge/homebridge:latest
     restart: unless-stopped
     network_mode: host
     volumes:
@@ -34,7 +34,7 @@ services:
       - TZ=${TZ}
   node-red:
     container_name: node-red
-    image: nodered/node-red
+    image: nodered/node-red:latest
     restart: unless-stopped
     network_mode: host
     volumes:
