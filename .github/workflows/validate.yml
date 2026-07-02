@@ -7,6 +7,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Validate compose file
-        run: docker-compose config
+        run: docker compose config
         env:
           ZIGBEE2MQTT_DEVICE: /dev/ttyACM0
